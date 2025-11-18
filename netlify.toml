@@ -1,0 +1,22 @@
+# Netlify Configuration for Brandon Kelly Portfolio
+
+[build]
+  # Build command: install pnpm, then install dependencies and build
+  command = "npm install -g pnpm@10.4.1 && pnpm install && pnpm build"
+
+  # Publish directory: Vite outputs built files to dist/public
+  publish = "dist/public"
+
+[build.environment]
+  # Specify Node.js version for consistent builds
+  NODE_VERSION = "18"
+
+  # Enable pnpm - tells Netlify to use pnpm as package manager
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# SPA redirect rule: required for client-side routing with Wouter
+# Redirects all routes to index.html for React Router to handle
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
