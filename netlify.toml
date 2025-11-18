@@ -1,8 +1,8 @@
 # Netlify Configuration for Brandon Kelly Portfolio
 
 [build]
-  # Build command: install pnpm, then install dependencies and build
-  command = "npm install -g pnpm@10.4.1 && pnpm install && pnpm build"
+  # Build command: install dependencies and build (pnpm is already available in Netlify)
+  command = "pnpm install && pnpm build"
 
   # Publish directory: Vite outputs built files to dist/public
   publish = "dist/public"
